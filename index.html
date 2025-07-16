@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="EXPO: Stable Reinforcement Learning with Expressive Policies">
+  <meta name="keywords" content="Batch Online RL">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EXPO: Stable Reinforcement Learning with Expressive Policies</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">EXPO: Stable Reinforcement Learning with Expressive Policies</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://dblp.org/pid/323/8972.html">Perry Dong</a>,</span>
+            <span class="author-block">
+              <a href="https://colinqiyangli.github.io/">Qiyang Li</a>,</span>
+            <span class="author-block">
+              <a href="https://dorsa.fyi/">Dorsa Sadigh</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://ai.stanford.edu/~cbfinn/">Chelsea Finn</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Stanford University and UC Berkeley</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2507.07986"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+                <a href="https://arxiv.org/abs/2507.07986"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>ArXiv</span>
+                </a>
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Code (Coming Soon)</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                      <i class="fab fa-youtube"></i>
+                      <i class="fab fa-github"></i>
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" controls playsinline height="100%">
+        <source src="./static/videos/.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        
+      </h2>
+    </div>
+  </div>
+</section>
+ -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We study the problem of training and fine-tuning expressive policies with online reinforcement learning (RL) given an offline dataset. Training expressive policy classes with online RL present a unique challenge of stable value maximization. Unlike simpler Gaussian policies commonly used in online RL, expressive policies like diffusion and flow-matching policies are parameterized by a long denoising chain, which hinders stable gradient propagation from actions to policy parameters when optimizing against some value function. Our key insight is that we can address stable value maximization by avoiding direct optimization over value with the expressive policy and instead construct an on-the-fly RL policy to maximize Q-value. We propose Expressive Policy Optimization (EXPO), a sample-efficient online RL algorithm that utilizes an on-the-fly policy to maximize value with two parameterized policies -- a larger expressive base policy trained with a stable imitation learning objective and a light-weight Gaussian edit policy that edits the actions sampled from the base policy toward a higher value distribution. The on-the-fly policy optimizes the actions from the base policy with the learned edit policy and chooses the value maximizing action from the base and edited actions for both sampling and temporal-difference (TD) backup. Our approach yields up to 2-3x improvement in sample efficiency on average over prior methods both in the setting of fine-tuning a pretrained policy given offline data and in leveraging offline data to train online. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="hero  is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="publication-image">
+          <center><img src="static/images/teaser.png" alt="Teaser image" width="85%"></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <br>
+          <h2 class="subtitle has-text-centered">
+          Expressive Policy Optimization (EXPO) is a stable, sample efficient method for training expressive policies with reinforcement learning by avoiding direct optimization over the value function with the expressive policy. Instead, EXPO trains the base expressive policy using a stable supervised learning objective and an edit policy with the reinforcement learning objective and construct an on-the-fly policy to maximize value through (1) editing the action samples from the base expressive policy to higher value distributions, and (2) non-parametric post-processing that takes multiple action candidates from the base and edit policy and selects the highest-value action among base and edited actions. 
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rounded">
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Intuition of Action Edits</h2>  
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="publication-image">
+          <center><img src="static/images/action_plot.png" alt="Action image" width="55%"></center>
+          <br>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <br>
+          <h2 class="subtitle has-text-centered">
+          The base expressive policy by itself cannot gaurantee the sampled actions maximize Q-value. The edit policy transforms actions of the base policy into actions that further maximize Q-value while encouraging exploration. The blue contour represents the Q-values of actions of a single state and the orange contours represent the Gaussian distributions of actions the edit policy changes the base actions into. 
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<hr class="rounded">
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Experiment Results</h2>        
+
+        <p style="text-align: left;">
+          <b>Online RL (No Pre-training).</b> Online RL results on 12 challenging sparse-reward tasks. Across almost every task, EXPO consistently exceeds or matches the performance of the best baseline—even without any pretraining. 
+          <br><br>
+          <center>Performance of Different Algorithms in Online RL with an Offline Dataset</center>
+          <img src="./static/images/online.png" width="100%">
+          <!-- <br>
+          <center>Final Performance of Different Algorithm Classes with Different Data Scales</center>
+          <img src="./static/images/scale_aggregate.png" width="100%"> -->
+          <br><br>
+        </p>
+        <p style="text-align: left;">
+          <b>Offline-to-Online RL (Offline Pre-training Followed by Online Fine-tuning).</b> Offline-to-online RL results on 12 challenging sparse-reward tasks. EXPO consistently exceeds or matches the performance of the best baseline. The relative benefit of EXPO over baselines is especially large on the manipulation tasks, where prior methods often struggle to improve in performance. Importantly, EXPO does not drop in performance going from pre-training to fine-tuning.
+          <br><br>
+          <center>Performance of Different Algorithms in Offline-to-Online RL</center>
+          <img src="./static/images/offline_to_online.png" width="100%">
+          <br>
+        </p>
+      
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="rounded">
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+@article{dong2025expo,
+    title   = {EXPO: Stable Reinforcement Learning with Expressive Policies},
+    author  = {Perry Dong and Qiyang Li and Dorsa Sadigh and Chelsea Finn},
+    journal = {arXiv},
+    year    = {2025},
+}
+
+    </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p></p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>,
+            courtesy of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, <a href="https://peract.github.io/">PerAct</a>, and <a href="https://emprise.cs.cornell.edu/flair/"> FLAIR.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
